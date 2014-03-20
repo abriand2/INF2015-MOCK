@@ -11,7 +11,7 @@ Pour tester des fonctionnalités qui font des accès de ce genre, il faut utilis
 
 * * *
 
-Commencez par récupérer le projet suivant : []()
+Commencez par récupérer le projet suivant : [INF2015-MOCK](https://github.com/hugoscurti/INF2015-MOCK)
 
 ### Exercice 1 : Modifier la structure de la classe _Cours_ pour qu'on puisse lui injecter une dépendance
 
