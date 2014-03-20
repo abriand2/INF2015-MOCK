@@ -49,6 +49,7 @@ _FileWriter_. En effet, comme le _FileWriter_ crée impérativement un fichier d
 
 **Remarque** : Le _FileWriterWrapper_ prend un **FileWriter** en paramètre et appelle la fonction _Write_ du _FileWriter_ lorsqu'on apelle la fonction _Write_ du _FileWriterWrapper_.
 
+* Modifier la classe _Rapport_ pour lui injectez un _FileWriterWrapper_, comme pour l'exercice 1
 * Examinez la classe _FileWriterWrapper_ et créez un Mock object qui hérite du _FileWriterWrapper_
     * Votre mock doit redéfinir la méthode write.
     * Si l'on redéfinit la méthode write, la classe parente n'utilisera pas le _FileWriter_ interne. On peut donc passer un _FileWriter_ nul lors de l'appel au constructeur de la classe parent.
