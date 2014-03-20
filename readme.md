@@ -15,7 +15,7 @@ Commencez par récupérer le projet suivant : [INF2015-MOCK](https://github.com/
 
 ### Exercice 1 : Modifier la structure de la classe _Cours_ pour qu'on puisse lui injecter une dépendance
 
-Nous voulons tester la méthode _envoyerCourrielMembres_ de la classe Membre. Cette méthode envoi un courriel à tous les membres du cours. 
+Nous voulons tester la méthode _envoyerCourrielMembres_ de la classe _Cours_. Cette méthode envoi un courriel à tous les membres du cours. 
 Cependant, cette méthode envoi réellement un courriel aux membres du cours!! L'envoi de courriel implique l'utilisation d'un environnement et un accès à des ressources externes, nous voulons donc éviter d'envoyer des courriels, mais nous voulons quand même pouvoir tester la méthode _envoyerCourrielMembres_.
 
 Comme nous voudrons "mocker" la classe **MailSender**, nous devons extraire cette composante de la classe _Cours_.
@@ -25,7 +25,7 @@ Au lieu que l'objet _Cours_ instancie à l'interne un MailSender, nous allons lu
 1- Modifier le constructeur pour qu'il accepte un 3e paramètre de type _MailSender_.
 2- Modifier le code du constructeur pour qu'on assigne à la variable interne _mailSender_ l'objet _MailSender_ passé en paramètre.
 
-Nous venons de créer une injection de dépendance pour la classe _Cours_
+Nous venons de créer une injection de dépendance pour la classe _Cours_.
 
 
 ### Exercice 2 : Créer un mock pour tester la fonction _envoyerCourrielMembres_ de la classe _Cours_
