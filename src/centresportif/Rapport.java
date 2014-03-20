@@ -13,6 +13,7 @@ public class Rapport {
     
     public Rapport(Cours cours, FileWriterWrapper fileWriter) {
         this.cours = cours;
+        this.fileWriter = fileWriter;
     }
     
     public void genererRapport() throws IOException {
