@@ -33,9 +33,9 @@ Nous venons de créer une injection de dépendance pour la classe _Cours_.
 1. Créez une classe qui hérite de la classe _MailSender_
 2. Comme on veut simuler l'envoi de courriel, nous devrons stoquer d'une certaine façon les courriels "envoyés"
     * Créez une variable dans votre mock qui stoque les courriels envoyés.
-    * Vous pouvez vous y aider en créant une classe Courriel avec laquelle vous instancierez les courriels et vous les stockerez dans votre collection de courriel.
+    * Vous pouvez vous y aider en créant une classe Courriel avec laquelle vous instancierez les courriels et vous les stockerez dans la collection de courriel.
 
-    
+
 ### Exercice 3 : Créer quelques tests qui utilisent le mock.
 Le but de cette manipulation est de pouvoir créer des bons tests unitaires sur la fonction _envoyerCourrielMembres_.
 
@@ -47,11 +47,10 @@ Le but de cette manipulation est de pouvoir créer des bons tests unitaires sur 
 Il est possible que la classe que l'on veut mocker ne nous permette pas de l'instancier sans faire un accès à des données. C'est le cas pour la classe
 _FileWriter_. En effet, comme le _FileWriter_ crée impérativement un fichier dans chacun de ses constructeurs, il faut contourner ça en l'englobant dans un wrapper.
 
-Le FileWriterWrapper prend un filewriter en paramètre et appelle la fonction Write lorsqu'on apelle la fonction Write du FileWriterWrapper.
+**Remarque** : Le _FileWriterWrapper_ prend un **FileWriter** en paramètre et appelle la fonction _Write_ du _FileWriter_ lorsqu'on apelle la fonction _Write_ du _FileWriterWrapper_.
 
 * Examinez la classe _FileWriterWrapper_ et créez un Mock object qui hérite du _FileWriterWrapper_
-    * Votre mock doit donc hériter du FileWriterWrapper et doit redéfinir la méthode write.
-    * Si l'on redéfinit la méthode write, la classe parente n'utilisera pas le FileWriter interne. On peut donc passer la valeur null lors de l'appel du constructeur de la classe parent.
+    * Votre mock doit redéfinir la méthode write.
+    * Si l'on redéfinit la méthode write, la classe parente n'utilisera pas le _FileWriter_ interne. On peut donc passer un _FileWriter_ nul lors de l'appel au constructeur de la classe parent.
     * Comme on veut garder traces de ce que le mock va écrire, on peut stoquer ce qu'il écrira dans un string que l'on gardera en variable protégée dans le mock.
-* Nous voulons tester la fonction _genererRapport_ de la classe **Rapport**. Comme vous pouvez le voir, nous avons déjà injecter la dépendance du FileWriterWrapper dans la classe
-**Rapport**. Il ne vous reste qu'à rédiger quelques tests sur la fonction en utilisant le mock précédemment créé.
+* Nous voulons tester la fonction _genererRapport_ de la classe **Rapport**. Comme vous pouvez le voir, nous avons déjà injecter la dépendance du FileWriterWrapper dans la classe **Rapport**. Il ne vous reste qu'à rédiger quelques tests sur la fonction en utilisant le mock précédemment créé.
