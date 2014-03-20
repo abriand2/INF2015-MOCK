@@ -1,5 +1,6 @@
 package centresportif;
 
+import java.io.FileWriter;
 import java.io.IOException;
 import util.FileWriterWrapper;
 
@@ -11,9 +12,9 @@ public class Rapport {
     private FileWriterWrapper fileWriter;
     protected Cours cours;
     
-    public Rapport(Cours cours, FileWriterWrapper fileWriter) {
+    public Rapport(Cours cours) throws IOException {
         this.cours = cours;
-        this.fileWriter = fileWriter;
+        this.fileWriter = new FileWriterWrapper(new FileWriter("cheminRapport.txt"));
     }
     
     public void genererRapport() throws IOException {
