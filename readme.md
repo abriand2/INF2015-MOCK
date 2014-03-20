@@ -22,22 +22,22 @@ Comme nous voudrons "mocker" la classe **MailSender**, nous devons extraire cett
 Au lieu que l'objet _Cours_ instancie à l'interne un MailSender, nous allons lui passer au constructeur un objet MailSender qu'il utilisera par la suite.
 *C'est le principe de l'injection de dépendance.*
 
-1- Modifier le constructeur pour qu'il accepte un 3e paramètre de type _MailSender_.
-2- Modifier le code du constructeur pour qu'on assigne à la variable interne _mailSender_ l'objet _MailSender_ passé en paramètre.
+1. Modifier le constructeur pour qu'il accepte un 3e paramètre de type _MailSender_.
+2. Modifier le code du constructeur pour qu'on assigne à la variable interne _mailSender_ l'objet _MailSender_ passé en paramètre.
 
 Nous venons de créer une injection de dépendance pour la classe _Cours_.
 
 
 ### Exercice 2 : Créer un mock pour tester la fonction _envoyerCourrielMembres_ de la classe _Cours_
 
-1- Créez une classe qui hérite de la classe _MailSender_
-2- Comme on veut simuler l'envoi de courriel, nous devrons stoquer d'une certaine façon les courriels "envoyés"
+1. Créez une classe qui hérite de la classe _MailSender_
+2. Comme on veut simuler l'envoi de courriel, nous devrons stoquer d'une certaine façon les courriels "envoyés"
     * Créez une variable dans votre mock qui stoque les courriels envoyés.
     * Vous pouvez vous y aider en créant une classe Courriel avec laquelle vous instancierez les courriels et vous les stockerez dans votre collection de courriel.
 
     
 ### Exercice 3 : Créer quelques tests qui utilisent le mock.
-Le but de cette manipulation était de pouvoir créer des tests unitaires plausibles sur la fonction _envoyerCourrielMembres_.
+Le but de cette manipulation est de pouvoir créer des bons tests unitaires sur la fonction _envoyerCourrielMembres_.
 
 * Creez quelques tests sur la fonction _envoyerCourrielMembres_ en utilisant l'objet Mock créé précédemment.
     * Exemple de test : ajouter quelques membres au cours et vérifier que le mock a envoyé le bon nombre de courriel.
