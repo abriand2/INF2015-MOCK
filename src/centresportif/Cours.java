@@ -11,11 +11,11 @@ public class Cours {
     
     private MailSender mailSender;
     
-    public Cours(String nom, int nbPlacesMax) {
+    public Cours(String nom, int nbPlacesMax, MailSender sender) {
         this.nom = nom;
         this.nbPlacesMax = nbPlacesMax;
         membresInscrits = new TreeMap<>();
-        mailSender = new MailSender();
+        mailSender = sender;
     }
     
     public void ajouterMembre(Membre membre) {
