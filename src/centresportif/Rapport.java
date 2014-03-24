@@ -12,9 +12,9 @@ public class Rapport {
     private FileWriterWrapper fileWriter;
     protected Cours cours;
     
-    public Rapport(Cours cours) throws IOException {
+    public Rapport(Cours cours, FileWriterWrapper writerWrapper) {
         this.cours = cours;
-        this.fileWriter = new FileWriterWrapper(new FileWriter("cheminRapport.txt"));
+        this.fileWriter = writerWrapper;
     }
     
     public void genererRapport() throws IOException {
@@ -25,7 +25,7 @@ public class Rapport {
         } else {
             rapport += "Membres inscrits : \n";
             for (Membre m : cours.membresInscrits.values()) {
-                rapport += String.format("-%s %s", m.prenom + m.nom);
+                rapport += String.format("-%s %s\n", m.prenom + m.nom);
             }
         }
         fileWriter.write(rapport);

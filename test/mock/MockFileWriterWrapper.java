@@ -14,4 +14,8 @@ public class MockFileWriterWrapper extends FileWriterWrapper {
     public void write(String message){
        this.message = message;
     }
+    
+    public String getText(){
+        return this.message;
+    }
 }
