@@ -6,7 +6,7 @@ import java.util.Stack;
 
 public class MockMailSender extends MailSender {
     
-    protected Stack<Mail> courriels;
+  /*  protected Stack<Mail> courriels;
     
     public MockMailSender(){
         courriels = new Stack<>();
@@ -19,6 +19,6 @@ public class MockMailSender extends MailSender {
     @Override
     public void send(String adresse, String message) {
         courriels.add(new Mail(adresse, message));
-    }
+    }*/
     
 }

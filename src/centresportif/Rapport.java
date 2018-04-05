@@ -2,6 +2,8 @@ package centresportif;
 
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import util.FileWriterWrapper;
 
 /**
@@ -12,9 +14,13 @@ public class Rapport {
     private FileWriterWrapper fileWriter;
     protected Cours cours;
     
-    public Rapport(Cours cours, FileWriterWrapper writerWrapper) {
-        this.cours = cours;
-        this.fileWriter = writerWrapper;
+    public Rapport(Cours cours) {
+        try {
+            this.cours = cours;
+            this.fileWriter = new FileWriterWrapper(new FileWriter(""));
+        } catch (IOException ex) {
+            Logger.getLogger(Rapport.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
     public void genererRapport() throws IOException {

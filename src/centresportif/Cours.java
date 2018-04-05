@@ -9,13 +9,12 @@ public class Cours {
     protected int nbPlacesMax;
     protected TreeMap<String, Membre> membresInscrits;
     
-    private MailSender mailSender;
+    private MailSender mailSender = new MailSender();
     
-    public Cours(String nom, int nbPlacesMax, MailSender sender) {
+    public Cours(String nom, int nbPlacesMax) {
         this.nom = nom;
         this.nbPlacesMax = nbPlacesMax;
         membresInscrits = new TreeMap<>();
-        mailSender = sender;
     }
     
     public void ajouterMembre(Membre membre) {
